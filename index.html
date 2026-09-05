@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfumatory Oman — The Alchemy of Scent | Luxury Niche Fragrance Curation</title>
+  <meta name="description" content="Perfumatory Oman is an exclusive luxury niche fragrance curator in Muscat, Oman. Gateway to 16 prestigious independent perfume houses including Obvious, Clive Christian, Creed, and Atelier Des Ors." />
+  <meta name="keywords" content="Perfumatory Oman, luxury perfume Muscat, niche fragrance Oman, Obvious perfume, Clive Christian, Creed, Nishane, Thameen, Omani perfumery" />
+
+  <!-- Google Fonts: Editorial Serif & Clean Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Load styles before JS to prevent FOUC -->
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="icon" type="image/png" href="/assets/transparent/brand-logo-gold.png" />
+  <style>
+    /* Critical first-paint styles — painted before stylesheet settles */
+    html, body {
+      margin: 0;
+      background: #14100D;
+      color: #F7F2EB;
+    }
+    [hidden] {
+      display: none !important;
+    }
+    .page-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #14100D;
+    }
+    .page-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Luxury Header / Navigation -->
+    <header class="navbar" id="navbar" role="banner">
+      <div class="nav-inner">
+        <a href="#" class="nav-brand" aria-label="Perfumatory Oman Home">
+          <img src="/assets/transparent/brand-logo-gold.png" alt="Perfumatory Oman Crest" class="brand-logo-img" />
+          <div class="brand-text-wrap">
+            <span class="brand-title">PERFUMATORY</span>
+            <span class="brand-sub">OMAN &bull; CURATION</span>
+          </div>
+        </a>
+
+        <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+          <a href="#hero" class="nav-link">The Opening</a>
+          <a href="#highlights-section" class="nav-link">Highlights</a>
+          <a href="#houses" class="nav-link">16 Houses</a>
+          <a href="#finder" class="nav-link">Scent Finder</a>
+          <a href="#heritage" class="nav-link">The Heritage</a>
+          <a href="#about" class="nav-link">Philosophy</a>
+          <a href="#contact" class="nav-link">Consultations</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="cart-btn" id="cart-btn" aria-label="Shopping Bag">
+            <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 01-8 0" />
+            </svg>
+            <span class="cart-count" id="cart-count">0</span>
+          </button>
+          
+          <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <nav class="mobile-nav-links">
+        <a href="#hero" class="mobile-nav-link">The Opening</a>
+        <a href="#highlights-section" class="mobile-nav-link">Highlights</a>
+        <a href="#houses" class="mobile-nav-link">16 Houses</a>
+        <a href="#finder" class="mobile-nav-link">Scent Finder</a>
+        <a href="#heritage" class="mobile-nav-link">The Heritage</a>
+        <a href="#about" class="mobile-nav-link">Philosophy</a>
+        <a href="#contact" class="mobile-nav-link">Consultations</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <p class="mobile-menu-loc">Muscat, Sultanate of Oman</p>
+        <a href="https://instagram.com/perfumatory.oman" target="_blank" rel="noopener" class="mobile-ig">@perfumatory.oman</a>
+      </div>
+    </div>
+
+    <!-- Hero Section: Featuring the 3D Obvious 'Un Été' Flacon -->
+    <section id="hero" class="hero" aria-label="Hero presentation">
+      <div class="hero-canvas-wrap" id="hero-canvas-wrap">
+        <canvas id="hero-canvas" aria-label="Interactive 3D Obvious perfume bottle with natural cork cap and glass label"></canvas>
+        <div class="hero-particles" id="hero-particles"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-spark">&#10022;</span>
+          <span class="badge-text">EST. MUSCAT &bull; SULTANATE OF OMAN</span>
+          <span class="badge-spark">&#10022;</span>
+        </div>
+        <h1 class="hero-title">THE ALCHEMY<br/>OF SCENT</h1>
+        <p class="hero-sub">
+          A gateway to the world&rsquo;s most discerning independent fragrance houses.
+          Rooted in 6,000 years of Arabian olfactory mastery.
+        </p>
+        <div class="hero-ctas">
+          <a href="#houses" class="btn btn-primary" id="hero-discover-btn">
+            <span>Explore 16 Houses</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="btn-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#finder" class="btn btn-outline" id="hero-finder-btn">
+            <span>Find Your Scent</span>
+          </a>
+        </div>
+        
+        <div class="hero-model-caption">
+          <span class="caption-dot"></span>
+          <span class="caption-label">Spotlight: <strong>OBVIOUS &mdash; Un Été</strong> &bull; Organic Alcohol &bull; Natural French Cork Stopper</span>
+        </div>
+      </div>
+
+      <a href="#highlights-section" class="hero-scroll-indicator" aria-label="Scroll down">
+        <span class="scroll-text">DISCOVER</span>
+        <span class="scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- Instagram Story Highlights Row (Matches User's Real Profile Highlights!) -->
+    <section id="highlights-section" class="highlights-section" aria-label="Instagram Curated Highlights">
+      <div class="highlights-container">
+        <div class="highlights-header">
+          <div class="ig-badge-title">
+            <svg class="ig-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span>@PERFUMATORY.OMAN &bull; STORY HIGHLIGHTS</span>
+          </div>
+          <p class="highlights-sub">Select any highlight to view the house profile and signature flacon</p>
+        </div>
+
+        <div class="highlights-track" id="highlights-track" role="list" aria-label="Instagram story highlights list">
+          <!-- 16 Highlights populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Houses Section -->
+    <section id="houses" class="houses-section" aria-label="Curated Fragrance Houses">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Selective Curation &bull; 16 Prestige Houses</p>
+          <h2 class="section-title">Curated Fragrance Houses</h2>
+          <div class="gold-divider"></div>
+          <p class="section-desc">
+            We reject mass production in favor of independent artistry. Each house in our collection
+            is chosen for its visionary craft, cultural heritage, and singular olfactory mastery.
+          </p>
+        </div>
+
+        <div class="houses-grid" id="houses-grid" role="list">
+          <!-- 16 House cards populated by main.js with transparent badges -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Fragrance Finder Section -->
+    <section id="finder" class="finder-section" aria-label="Personalized Fragrance Finder">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Personalized Discovery Ritual</p>
+          <h2 class="section-title">Find Your Scent Profile</h2>
+          <div class="gold-divider"></div>
+          <p class="section-desc">Select your preferred olfactory notes. Our curatorial algorithm will orchestrate your bespoke recommendation from our 16 houses.</p>
+        </div>
+
+        <div class="finder-card">
+          <div class="note-family">
+            <div class="family-header">
+              <span class="family-badge">TOP NOTES</span>
+              <span class="family-desc">The Opening Impression (First 15 Minutes)</span>
+            </div>
+            <div class="chips-row" id="top-notes"></div>
+          </div>
+
+          <div class="note-family">
+            <div class="family-header">
+              <span class="family-badge">HEART NOTES</span>
+              <span class="family-desc">The Emotional Soul (2 to 4 Hours)</span>
+            </div>
+            <div class="chips-row" id="heart-notes"></div>
+          </div>
+
+          <div class="note-family">
+            <div class="family-header">
+              <span class="family-badge">BASE NOTES</span>
+              <span class="family-desc">The Enduring Sillage (6 to 16+ Hours)</span>
+            </div>
+            <div class="chips-row" id="base-notes"></div>
+          </div>
+
+          <div class="finder-footer">
+            <div class="selected-preview-wrap">
+              <span class="preview-label">Selected Notes:</span>
+              <div class="selected-notes-preview" id="selected-preview">
+                <span class="preview-placeholder">No notes selected &mdash; click notes above to begin</span>
+              </div>
+            </div>
+            <button class="btn btn-primary finder-discover-btn" id="finder-discover-btn">
+              <span>Reveal Curated Matches</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="btn-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+
+          <div class="finder-results" id="finder-results" aria-live="polite" aria-label="Matching fragrances"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Detail Modal with 360° Interactive Bottle -->
+    <div class="product-modal-overlay" id="product-modal-overlay" role="dialog" aria-modal="true" aria-label="Product detail modal" hidden>
+      <div class="product-modal" id="product-modal">
+        <button class="modal-close" id="modal-close-btn" aria-label="Close dialog">&times;</button>
+        <div class="product-modal-inner">
+          <div class="product-visual" id="product-visual">
+            <div class="product-canvas-container">
+              <canvas id="product-canvas" aria-label="Interactive 3D product view"></canvas>
+              <div class="rotate-hint">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                <span>Click &amp; Drag for 360&deg; View</span>
+              </div>
+            </div>
+            <div class="product-angles" id="product-angles"></div>
+          </div>
+          <div class="product-info" id="product-info"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Luxury Shopping Bag / Ordering System Drawer -->
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay" hidden>
+      <div class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Bag">
+        <div class="cart-drawer-header">
+          <div class="cart-header-title">
+            <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            <h3>YOUR OLFACTORY SELECTION</h3>
+          </div>
+          <button class="drawer-close-btn" id="cart-close-btn" aria-label="Close cart">&times;</button>
+        </div>
+
+        <div class="cart-drawer-items" id="cart-drawer-items">
+          <!-- Items rendered here -->
+        </div>
+
+        <div class="cart-drawer-footer" id="cart-drawer-footer">
+          <div class="cart-subtotal-row">
+            <span>Estimated Total:</span>
+            <span class="cart-subtotal-val" id="cart-subtotal">OMR 0</span>
+          </div>
+          <p class="cart-note">&bull; Complimentary bespoke packaging &amp; luxury sample with every flacon &bull;</p>
+          <button class="btn btn-primary cart-checkout-btn" id="cart-checkout-btn">
+            <span>Proceed to Private Consultation Order</span>
+          </button>
+          <p class="cart-secure-text">Encrypted &bull; Courier Delivery Across Oman &amp; The GCC</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Heritage & Editorial Section -->
+    <section id="heritage" class="heritage-section" aria-label="Brand Heritage & Editorial Stories">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Olfactory Mastery</p>
+          <h2 class="section-title">Heritage &amp; Lineage</h2>
+          <div class="gold-divider"></div>
+          <p class="section-desc">From London royal warrants to Parisian organic ateliers and Venetian spice voyages, explore the master perfumers defining niche fragrance.</p>
+        </div>
+        <div class="heritage-editorial" id="heritage-editorial"></div>
+      </div>
+    </section>
+
+    <!-- Philosophy & About Section -->
+    <section id="about" class="about-section" aria-label="About Perfumatory Oman">
+      <div class="section-container">
+        <div class="about-inner">
+          <div class="about-text">
+            <p class="section-eyebrow">Our Guiding Ethos</p>
+            <h2 class="section-title">The Art of Curatorial Discernment</h2>
+            <div class="gold-divider-left"></div>
+            <p class="about-body">
+              Perfumatory Oman is not a commercial perfume store &mdash; it is an olfactory salon and cultural curator. Rooted in Oman&rsquo;s 6,000-year legacy of royal frankincense and sacred scent layering, we serve as the trusted bridge between discerning connoisseurs across the Gulf and the world&rsquo;s most recondite niche perfumers.
+            </p>
+            <p class="about-body">
+              Every house, every flacon, and every note pyramid is selected not for mass-market trend cycles, but for its uncompromising point of view, artisanal materials, and timeless aesthetic reverence.
+            </p>
+            <div class="about-pillars">
+              <div class="pillar">
+                <span class="pillar-symbol">&#10022;</span>
+                <h4 class="pillar-title">Artisanal Authenticity</h4>
+                <p class="pillar-text">Only independently owned perfume houses with genuine creative autonomy.</p>
+              </div>
+              <div class="pillar">
+                <span class="pillar-symbol">&#9884;</span>
+                <h4 class="pillar-title">Omani Cultural Pride</h4>
+                <p class="pillar-text">Honoring the ancient Dhofar frankincense trail with modern luxury curation.</p>
+              </div>
+              <div class="pillar">
+                <span class="pillar-symbol">&#10023;</span>
+                <h4 class="pillar-title">Educated Connoisseurship</h4>
+                <p class="pillar-text">Treating fragrance as high art requiring patience, knowledge, and slow discovery.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual" id="about-visual">
+            <div class="about-img-wrap">
+              <img src="/assets/fragrance example for 3d.jpg" alt="Luxury fragrance atelier ambient lighting" class="about-img" loading="lazy" />
+              <div class="about-img-overlay"></div>
+            </div>
+            <div class="about-stat-card">
+              <p class="stat-number">6,000</p>
+              <p class="stat-label">Years of Omani Olfactory Heritage</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Consultation Section -->
+    <section id="contact" class="contact-section" aria-label="Contact Perfumatory Oman">
+      <div class="section-container">
+        <div class="contact-inner">
+          <div class="section-header">
+            <p class="section-eyebrow">Private Concierge</p>
+            <h2 class="section-title">Begin Your Olfactory Journey</h2>
+            <div class="gold-divider"></div>
+            <p class="section-desc">Arrange a bespoke private consultation in Muscat, request sample vials, or speak directly with our senior curators.</p>
+          </div>
+
+          <div class="contact-body">
+            <form class="contact-form" id="contact-form" novalidate aria-label="Concierge consultation form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-name" class="form-label">Full Name</label>
+                  <input type="text" id="form-name" name="name" class="form-input" placeholder="Your name" required autocomplete="name" />
+                </div>
+                <div class="form-group">
+                  <label for="form-email" class="form-label">Email Address</label>
+                  <input type="email" id="form-email" name="email" class="form-input" placeholder="name@domain.com" required autocomplete="email" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="form-interest" class="form-label">Area of Interest</label>
+                <select id="form-interest" name="interest" class="form-input form-select">
+                  <option value="">Select your inquiry...</option>
+                  <option value="consultation">Private In-Person Consultation (Muscat)</option>
+                  <option value="sampling">Discovery Sample Set Request</option>
+                  <option value="gifting">VIP Bespoke Gifting Service</option>
+                  <option value="ordering">House Flacon Order Assistance</option>
+                  <option value="curation">General Olfactory Inquiry</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="form-message" class="form-label">Fragrance Preferences / Message</label>
+                <textarea id="form-message" name="message" class="form-input form-textarea" placeholder="Tell us about your signature scent notes, favorite houses, or special requests..." rows="4"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary contact-submit-btn" id="contact-submit-btn">
+                <span>Submit Private Inquiry</span>
+              </button>
+            </form>
+
+            <div class="contact-info">
+              <div class="contact-info-item">
+                <span class="contact-info-label">BOUTIQUE &amp; SALON</span>
+                <span class="contact-info-value">Muscat, Sultanate of Oman</span>
+              </div>
+              <div class="contact-info-item">
+                <span class="contact-info-label">OFFICIAL INSTAGRAM</span>
+                <a href="https://instagram.com/perfumatory.oman" class="contact-info-value contact-link" target="_blank" rel="noopener" id="ig-link">@perfumatory.oman</a>
+              </div>
+              <div class="contact-info-item">
+                <span class="contact-info-label">CURATORIAL HOURS</span>
+                <span class="contact-info-value">By Private Appointment Only</span>
+              </div>
+              <div class="contact-info-item">
+                <span class="contact-info-label">GCC SHIPPING</span>
+                <span class="contact-info-value">Direct insured courier delivery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Luxury Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="/assets/transparent/brand-logo-gold.png" alt="Perfumatory Oman Crest" class="footer-logo" loading="lazy" />
+          <p class="footer-tagline">Gateway to the world&rsquo;s most<br/>exclusive independent fragrance houses.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#hero" class="footer-link">The Opening</a>
+          <a href="#highlights-section" class="footer-link">Highlights</a>
+          <a href="#houses" class="footer-link">16 Houses</a>
+          <a href="#finder" class="footer-link">Scent Finder</a>
+          <a href="#heritage" class="footer-link">Heritage</a>
+          <a href="#about" class="footer-link">Philosophy</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </nav>
+        <p class="footer-copy">&copy; 2026 Perfumatory Oman. All rights reserved. Muscat, Sultanate of Oman.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Page Loader -->
+  <div class="page-loader" id="page-loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-crest">
+        <img src="/assets/transparent/brand-logo-gold.png" alt="Perfumatory Oman" class="loader-logo-img" />
+      </div>
+      <div class="loader-ring"></div>
+      <p class="loader-brand-name">PERFUMATORY</p>
+      <p class="loader-brand-sub">OMAN</p>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
